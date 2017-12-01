@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="create_table_public.pzn.fx" author="yditarova" dbms="postgresql">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="pzn" schemaName="public"/>
+            </not>
+        </preConditions>
+        <sql>
+            CREATE TABLE public.pzn (
+            VKEY varchar(2),
+            PZN	varchar(2),
+            IMY	NAME varchar(100),
+            CB_DATE	date,
+            CE_DATE date,
+            CONSTRAINT vkey_pk PRIMARY KEY(vkey)
+            );
+        </sql>
+    </changeSet>
+
+    <changeSet id="public.insert.real" author="yditarova" dbms="postgresql">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="pzn" schemaName="public"/>
+        </preConditions>
+        <sql>
+            INSERT INTO public.pzn  VALUES('01','00','ГУ/О','Главное управление/Отделение (НБ)','1994-01-20',NULL);
+            INSERT INTO public.pzn  VALUES('02','10','РКЦ','Расчетно-кассовый центр','1994-01-20',NULL);
+            INSERT INTO public.pzn  VALUES('03','20','Б','Банк','1994-01-20',NULL);
+            INSERT INTO public.pzn  VALUES('04','21','КБ','Коммерческий банк','1994-01-20','2003-03-30');
+            INSERT INTO public.pzn  VALUES('05','22','СБ','Сбербанк России','1994-01-20',NULL);
+            INSERT INTO public.pzn  VALUES('06','23','АКБ','Акционерный коммерческий банк','1994-01-20','2003-03-30');
+            INSERT INTO public.pzn  VALUES('07','24','ЧКБ','Частный коммерческий банк','1994-01-20','2003-03-30');
+            INSERT INTO public.pzn  VALUES('08','25','КОПБ','Кооперативный банк','1994-01-20','2003-03-30');
+            INSERT INTO public.pzn  VALUES('09','26','АПБ','АКБ "АгроПромБанк" и его регион.филиалы','1994-04-27','2003-03-30');
+            INSERT INTO public.pzn  VALUES('10','30','ФБ','Филиал банка','1994-01-20',NULL);
+            INSERT INTO public.pzn  VALUES('11','31','ФКБ','Филиал коммерческого банка','1994-01-20','2003-03-30');
+            INSERT INTO public.pzn  VALUES('12','32','ФСБ','Филиал Сбербанка','1994-01-20',NULL);
+            INSERT INTO public.pzn  VALUES('13','33','ФАКБ','Филиал акционерного коммерческого банка','1994-01-20','2003-03-30');
+            INSERT INTO public.pzn  VALUES('14','34','ФЧКБ','Филиал частного коммерческого банка','1994-01-20','2003-03-30');
+            INSERT INTO public.pzn  VALUES('15','35','ФКОБ','Филиал кооперативного банка','1994-01-20','2003-03-30');
+            INSERT INTO public.pzn  VALUES('16','36','Отд.','Отделение "АгроПромБанка"','1994-04-27','2003-03-30');
+            INSERT INTO public.pzn  VALUES('17','40','ПУ','Полевое учреждение Банка России','1994-01-20',NULL);
+            INSERT INTO public.pzn  VALUES('18','50','МРХ','Межрегиональное хранилище','1994-01-20',NULL);
+            INSERT INTO public.pzn  VALUES('20','70','НКО','НКО (расчетные,орг-ции инкассации и др.)','1995-05-25',NULL);
+            INSERT INTO public.pzn  VALUES('21','71','КЛ','Клиринговое учреждение','1995-05-25','2003-03-30');
+            INSERT INTO public.pzn  VALUES('22','72','ОРЦБ','Расчетный центр ОРЦБ','1997-03-07',NULL);
+            INSERT INTO public.pzn  VALUES('23','98','ИСКЛ','Начат процесс ликвидации','1995-10-30','2003-03-30');
+            INSERT INTO public.pzn  VALUES('24','99','ОТЗВ','Огр.расх.опер. по приказу об отз.лиценз.','1995-05-25','2003-03-30');
+            INSERT INTO public.pzn  VALUES('25',NULL,NULL,'Признак типа не определен','1994-01-20','2003-03-30');
+            INSERT INTO public.pzn  VALUES('26','**',NULL,'Подр. Банка России,не обслужив. клиентов','1994-04-12',NULL);
+            INSERT INTO public.pzn  VALUES('27','90','ЛИКВ','Ликвидационная комиссия (ликвидатор)','1997-03-07',NULL);
+            INSERT INTO public.pzn  VALUES('28','37','ТУСБ','Территориальные управления Сбербанка','2002-12-09',NULL);
+            INSERT INTO public.pzn  VALUES('29','73','НДКО','НКО, осущ. депозитно-кредитные операции','2002-12-09',NULL);
+            INSERT INTO public.pzn  VALUES('30','74','ФНКО','Филиал НКО','2002-12-09',NULL);
+            INSERT INTO public.pzn  VALUES('31','91','КУПР','Конкурсный управляющий','2002-12-09',NULL);
+            INSERT INTO public.pzn  VALUES('32','75','ФДКО','Филиал НДКО','2006-10-23',NULL);
+            INSERT INTO public.pzn  VALUES('33','76','ФРП','Филиал расчетного центра ОРЦБ','2007-05-15',NULL);
+            INSERT INTO public.pzn  VALUES('34','80','ОНК','Организация, не являющаяся кредитной','2009-07-27',NULL);
+            INSERT INTO public.pzn  VALUES('35','11','ПРС','Подразделение расчетн. сети Банка России','2013-01-01','2015-07-05');
+            INSERT INTO public.pzn  VALUES('36','12','ОНБ','Отделение (НБ), не ведущее баланс','2015-07-06',NULL);
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

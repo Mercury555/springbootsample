@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="create_table_public.reg.fx" author="yditarova" dbms="postgresql">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="reg" schemaName="public"/>
+            </not>
+        </preConditions>
+        <sql>
+            CREATE TABLE public.reg (
+            VKEY varchar(2),
+            RGN	varchar(2),
+            NAME varchar(50),
+            CENTER varchar(50),
+            NAMET varchar(50),
+            CONSTRAINT vkey_pk PRIMARY KEY(vkey)
+            );
+        </sql>
+    </changeSet>
+
+    <changeSet id="public.insert.real" author="yditarova" dbms="postgresql">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="reg" schemaName="public"/>
+        </preConditions>
+        <sql>
+            INSERT INTO public.reg  VALUES('48','63','САРАТОВСКАЯ ОБЛАСТЬ','Г САРАТОВ','САРАТОВСКОЙ ОБЛАСТИ');
+            INSERT INTO public.reg  VALUES('49','64','САХАЛИНСКАЯ ОБЛАСТЬ','Г ЮЖНО-САХАЛИНСК','САХАЛИНСКОЙ ОБЛАСТИ');
+            INSERT INTO public.reg  VALUES('50','65','СВЕРДЛОВСКАЯ ОБЛАСТЬ','Г ЕКАТЕРИНБУРГ','СВЕРДЛОВСКОЙ ОБЛАСТИ');
+            INSERT INTO public.reg  VALUES('51','66','СМОЛЕНСКАЯ ОБЛАСТЬ','Г СМОЛЕНСК','СМОЛЕНСКОЙ ОБЛАСТИ');
+            INSERT INTO public.reg  VALUES('52','68','ТАМБОВСКАЯ ОБЛАСТЬ','Г ТАМБОВ','ТАМБОВСКОЙ ОБЛАСТИ');
+            INSERT INTO public.reg  VALUES('53','69','ТОМСКАЯ ОБЛАСТЬ','Г ТОМСК','ТОМСКОЙ ОБЛАСТИ');
+            INSERT INTO public.reg  VALUES('54','70','ТУЛЬСКАЯ ОБЛАСТЬ','Г ТУЛА','ТУЛЬСКОЙ ОБЛАСТИ');
+            INSERT INTO public.reg  VALUES('55','71','ТЮМЕНСКАЯ ОБЛАСТЬ','Г ТЮМЕНЬ','ТЮМЕНСКОЙ ОБЛАСТИ');
+            INSERT INTO public.reg  VALUES('56','73','УЛЬЯНОВСКАЯ ОБЛАСТЬ','Г УЛЬЯНОВСК','УЛЬЯНОВСКОЙ ОБЛАСТИ');
+            INSERT INTO public.reg  VALUES('57','75','ЧЕЛЯБИНСКАЯ ОБЛАСТЬ','Г ЧЕЛЯБИНСК','ЧЕЛЯБИНСКОЙ ОБЛАСТИ');
+            INSERT INTO public.reg  VALUES('58','76','ЗАБАЙКАЛЬСКИЙ КРАЙ','Г ЧИТА','ЗАБАЙКАЛЬСКОГО КРАЯ');
+            INSERT INTO public.reg  VALUES('59','77','ЧУКОТСКИЙ АО','Г АНАДЫРЬ','ЧУКОТСКОГО АО');
+            INSERT INTO public.reg  VALUES('60','78','ЯРОСЛАВСКАЯ ОБЛАСТЬ','Г ЯРОСЛАВЛЬ','ЯРОСЛАВСКОЙ ОБЛАСТИ');
+            INSERT INTO public.reg  VALUES('61','79','РЕСПУБЛИКА АДЫГЕЯ','Г МАЙКОП','РЕСПУБЛИКИ АДЫГЕЯ');
+            INSERT INTO public.reg  VALUES('62','80','РЕСПУБЛИКА БАШКОРТОСТАН','Г УФА','РЕСПУБЛИКИ БАШКОРТОСТАН');
+            INSERT INTO public.reg  VALUES('63','81','РЕСПУБЛИКА БУРЯТИЯ','Г УЛАН-УДЭ','РЕСПУБЛИКИ БУРЯТИЯ');
+            INSERT INTO public.reg  VALUES('64','82','РЕСПУБЛИКА ДАГЕСТАН','Г МАХАЧКАЛА','РЕСПУБЛИКИ ДАГЕСТАН');
+            INSERT INTO public.reg  VALUES('65','83','КАБАРДИНО-БАЛКАРСКАЯ РЕСПУБЛИКА','Г НАЛЬЧИК','КАБАРДИНО-БАЛКАРСКОЙ РЕСПУБЛИКИ');
+            INSERT INTO public.reg  VALUES('66','84','РЕСПУБЛИКА АЛТАЙ','Г ГОРНО-АЛТАЙСК','РЕСПУБЛИКИ АЛТАЙ');
+            INSERT INTO public.reg  VALUES('67','85','РЕСПУБЛИКА КАЛМЫКИЯ','Г ЭЛИСТА','РЕСПУБЛИКИ КАЛМЫКИЯ');
+            INSERT INTO public.reg  VALUES('68','86','РЕСПУБЛИКА КАРЕЛИЯ','Г ПЕТРОЗАВОДСК','РЕСПУБЛИКИ КАРЕЛИЯ');
+            INSERT INTO public.reg  VALUES('69','87','РЕСПУБЛИКА КОМИ','Г СЫКТЫВКАР','РЕСПУБЛИКИ КОМИ');
+            INSERT INTO public.reg  VALUES('70','88','РЕСПУБЛИКА МАРИЙ ЭЛ','Г ЙОШКАР-ОЛА','РЕСПУБЛИКИ МАРИЙ ЭЛ');
+            INSERT INTO public.reg  VALUES('71','89','РЕСПУБЛИКА МОРДОВИЯ','Г САРАНСК','РЕСПУБЛИКИ МОРДОВИЯ');
+            INSERT INTO public.reg  VALUES('72','90','РЕСПУБЛИКА СЕВЕРНАЯ ОСЕТИЯ-АЛАНИЯ','Г ВЛАДИКАВКАЗ','РЕСПУБЛИКИ СЕВЕРНАЯ ОСЕТИЯ-АЛАНИЯ');
+            INSERT INTO public.reg  VALUES('73','91','КАРАЧАЕВО-ЧЕРКЕССКАЯ РЕСПУБЛИКА','Г ЧЕРКЕССК','КАРАЧАЕВО-ЧЕРКЕССКОЙ РЕСПУБЛИКИ');
+            INSERT INTO public.reg  VALUES('74','92','РЕСПУБЛИКА ТАТАРСТАН','Г КАЗАНЬ','РЕСПУБЛИКИ ТАТАРСТАН');
+            INSERT INTO public.reg  VALUES('75','93','РЕСПУБЛИКА ТЫВА','Г КЫЗЫЛ','РЕСПУБЛИКИ ТЫВА');
+            INSERT INTO public.reg  VALUES('76','94','УДМУРТСКАЯ РЕСПУБЛИКА','Г ИЖЕВСК','УДМУРТСКОЙ РЕСПУБЛИКИ');
+            INSERT INTO public.reg  VALUES('77','95','РЕСПУБЛИКА ХАКАСИЯ','Г АБАКАН','РЕСПУБЛИКИ ХАКАСИЯ');
+            INSERT INTO public.reg  VALUES('78','96','ЧЕЧЕНСКАЯ РЕСПУБЛИКА','Г ГРОЗНЫЙ','ЧЕЧЕНСКОЙ РЕСПУБЛИКИ');
+            INSERT INTO public.reg  VALUES('79','97','ЧУВАШСКАЯ РЕСПУБЛИКА','Г ЧЕБОКСАРЫ','ЧУВАШСКОЙ РЕСПУБЛИКИ');
+            INSERT INTO public.reg  VALUES('80','98','РЕСПУБЛИКА САХА(ЯКУТИЯ)','Г ЯКУТСК','РЕСПУБЛИКИ САХА(ЯКУТИЯ)');
+            INSERT INTO public.reg  VALUES('81','99','ЕВРЕЙСКАЯ АО','Г БИРОБИДЖАН','ЕВРЕЙСКОЙ АО');
+            INSERT INTO public.reg  VALUES('82','35','РЕСПУБЛИКА КРЫМ','Г СИМФЕРОПОЛЬ','РЕСПУБЛИКИ КРЫМ');
+            INSERT INTO public.reg  VALUES('83','67','Г СЕВАСТОПОЛЬ','Г СЕВАСТОПОЛЬ','Г СЕВАСТОПОЛЬ');
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

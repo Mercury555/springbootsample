@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="create_table_public.bnkseek.fx" author="yditarova" dbms="postgresql">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="bnkseek" schemaName="public"/>
+            </not>
+        </preConditions>
+        <sql>
+            CREATE TABLE public.bnkseek (
+            vkey varchar(8) NOT NULL,
+            reral varchar(4),
+            pzn varchar(2),
+            uer varchar(1) NOT NULL,
+            rgn varchar(1) NOT NULL,
+            ind varchar(6),
+            tnp varchar(1),
+            nnp	varchar(25),
+            adr varchar(30),
+            rkc varchar(9),
+            namep varchar(45) NOT NULL,
+            namen varchar(30) NOT NULL,
+            newnum varchar(9) NOT NULL,
+            newks varchar(9),
+            permfo varchar(6),
+            srok varchar(2) NOT NULL,
+            at1 varchar(7),
+            at2 varchar(7),
+            telef varchar(25),
+            regn varchar(9),
+            okpo varchar(8),
+            dt_izm date NOT NULL,
+            cks	ksnp varchar(6),
+            ksnp varchar(20)
+            date_in date NOT NULL,
+            date_ch date,
+            vkeydel varchar(8),
+            dt_izmr date,
+            CONSTRAINT vkey_pk PRIMARY KEY(vkey),
+            CONSTRAINT "bnkseek_real_fk" FOREIGN KEY ("real") REFERENCES "public"."real" ("real") ON DELETE RESTRICT ON UPDATE RESTRICT,
+            CONSTRAINT "bnkseek_pzn_fk" FOREIGN KEY ("pzn") REFERENCES "public"."pzn" ("pzn") ON DELETE RESTRICT ON UPDATE RESTRICT,
+            CONSTRAINT "bnkseek_uer_fk" FOREIGN KEY ("uer") REFERENCES "public"."uer" ("uer") ON DELETE RESTRICT ON UPDATE RESTRICT,
+            CONSTRAINT "bnkseek_rgn_fk" FOREIGN KEY ("rgn") REFERENCES "public"."reg" ("rgn") ON DELETE RESTRICT ON UPDATE RESTRICT,
+            CONSTRAINT "bnkseek_rgn_fk" FOREIGN KEY ("tnp") REFERENCES "public"."tnp" ("tnp") ON DELETE RESTRICT ON UPDATE RESTRICT,
+            CONSTRAINT "bnkseek_bnkseek_fk" FOREIGN KEY ("vkeydel") REFERENCES "public"."bnkseek" ("vkey") ON DELETE RESTRICT ON UPDATE RESTRICT,
+            CONSTRAINT bnkseek_uk UNIQUE(newnum)
+            );
+        </sql>
+    </changeSet>
+
+    <changeSet id="alter_table_public.bnkseek_add_index_real" author="yditarova" dbms="postgresql" runInTransaction="false">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*)
+                from pg_indexes
+                where schemaname = 'public'
+                and tablename = 'bnkseek'
+                and indexname = 'bnkseek_add_index_real_ix';
+            </sqlCheck>
+        </preConditions>
+        <sql>
+            CREATE INDEX CONCURRENTLY bnkseek_add_index_real_ix ON public.bnkseek
+            USING btree (real);
+        </sql>
+    </changeSet>
+
+    <changeSet id="alter_table_public.bnkseek_add_index_pzn" author="yditarova" dbms="postgresql" runInTransaction="false">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*)
+                from pg_indexes
+                where schemaname = 'public'
+                and tablename = 'bnkseek'
+                and indexname = 'bnkseek_add_index_pzn_ix';
+            </sqlCheck>
+        </preConditions>
+        <sql>
+            CREATE INDEX CONCURRENTLY bnkseek_add_index_pzn_ix ON public.bnkseek
+            USING btree (pzn);
+        </sql>
+    </changeSet>
+
+    <changeSet id="alter_table_public.bnkseek_add_index_uer" author="yditarova" dbms="postgresql" runInTransaction="false">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*)
+                from pg_indexes
+                where schemaname = 'public'
+                and tablename = 'bnkseek'
+                and indexname = 'bnkseek_add_index_uer_ix';
+            </sqlCheck>
+        </preConditions>
+        <sql>
+            CREATE INDEX CONCURRENTLY bnkseek_add_index_uer_ix ON public.bnkseek
+            USING btree (uer);
+        </sql>
+    </changeSet>
+
+    <changeSet id="alter_table_public.bnkseek_add_index_rgn" author="yditarova" dbms="postgresql" runInTransaction="false">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*)
+                from pg_indexes
+                where schemaname = 'public'
+                and tablename = 'bnkseek'
+                and indexname = 'bnkseek_add_index_rgn_ix';
+            </sqlCheck>
+        </preConditions>
+        <sql>
+            CREATE INDEX CONCURRENTLY bnkseek_add_index_rgn_ix ON public.bnkseek
+            USING btree (rgn);
+        </sql>
+    </changeSet>
+
+    <changeSet id="alter_table_public.bnkseek_add_index_tnp" author="yditarova" dbms="postgresql" runInTransaction="false">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*)
+                from pg_indexes
+                where schemaname = 'public'
+                and tablename = 'bnkseek'
+                and indexname = 'bnkseek_add_index_tnp_ix';
+            </sqlCheck>
+        </preConditions>
+        <sql>
+            CREATE INDEX CONCURRENTLY bnkseek_add_index_tnp_ix ON public.bnkseek
+            USING btree (tnp);
+        </sql>
+    </changeSet>
+
+    <changeSet id="alter_table_public.bnkseek_add_index_vkeydel" author="yditarova" dbms="postgresql" runInTransaction="false">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*)
+                from pg_indexes
+                where schemaname = 'public'
+                and tablename = 'bnkseek'
+                and indexname = 'bnkseek_add_index_vkeydel_ix';
+            </sqlCheck>
+        </preConditions>
+        <sql>
+            CREATE INDEX CONCURRENTLY bnkseek_add_index_vkeydel_ix ON public.bnkseek
+            USING btree (vkeydel);
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

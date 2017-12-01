@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+
+<include file="1.0/201711221834_create_table_tnp.xml" relativeToChangelogFile="true"/>
+<include file="1.0/201711221835_create_table_reg.xml" relativeToChangelogFile="true"/>
+<include file="1.0/201711221836_create_table_uer.xml" relativeToChangelogFile="true"/>
+<include file="1.0/201711221837_create_table_pzn.xml" relativeToChangelogFile="true"/>
+<include file="1.0/201711221838_create_table_real.xml" relativeToChangelogFile="true"/>
+<include file="1.0/201711221839_create_table_bnkseek.xml" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>
+
+

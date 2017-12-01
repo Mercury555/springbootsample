@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="create_table_public.uer.fx" author="yditarova" dbms="postgresql">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="uer" schemaName="public"/>
+            </not>
+        </preConditions>
+        <sql>
+            CREATE TABLE public.real (
+            VKEY varchar(2),
+            UER varchar(1),
+            UERNAME varchar(100),
+            CONSTRAINT vkey_pk PRIMARY KEY(vkey)
+            );
+        </sql>
+    </changeSet>
+
+    <changeSet id="public.insert.uer" author="yditarova" dbms="postgresql">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="uer" schemaName="public"/>
+        </preConditions>
+        <sql>
+            INSERT INTO public.real  VALUES('01',	'0',	'НЕ УЧАСТВУЕТ');
+            INSERT INTO public.real  VALUES('02',	'1',	'ТОЛЬКО МЕЖРЕГИОНАЛЬНЫЕ РАСЧЕТЫ');
+            INSERT INTO public.real  VALUES('03',	'2',	'ТОЛЬКО ВНУТРИРЕГИОНАЛЬНЫЕ РАСЧЕТЫ');
+            INSERT INTO public.real  VALUES('04',	'3',	'МЕЖРЕГИОНАЛЬНЫЕ И ВНУТРИРЕГИОНАЛЬНЫЕ РАСЧЕТЫ');
+            INSERT INTO public.real  VALUES('05',	'7',	'ИСКЛЮЧЕН ИЗ МЭР, НО РАБОТАЕТ ПО ПОДТВЕРЖДЕНИЯМ МЭР, УЧАСТНИК ВЭР');
+            INSERT INTO public.real  VALUES('06',	'4',	'УЧАСТНИК МЭР, ВЭР И ОСОБЫЙ УЧАСТНИК РАСЧЕТОВ СИСТЕМЫ БЭСП');
+            INSERT INTO public.real  VALUES('07',	'5',	'АССОЦИИРОВАННЫЙ УЧАСТНИК БЭСП И УЧАСТНИК ВЭР');
+            INSERT INTO public.real  VALUES('08',	'6',	'АССОЦИИРОВАННЫЙ УЧАСТНИК БЭСП И НЕ УЧАСТНИК ВЭР');
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>
