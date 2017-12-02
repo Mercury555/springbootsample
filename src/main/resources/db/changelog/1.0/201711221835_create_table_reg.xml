@@ -11,14 +11,14 @@
             </not>
         </preConditions>
         <sql>
-            CREATE TABLE public.reg (
+            CREATE TABLE public.rgn (
             VKEY varchar(2),
-            RGN	varchar(2),
+            REG	varchar(2),
             NAME varchar(50),
             CENTER varchar(50),
             NAMET varchar(50),
             CONSTRAINT reg_vkey_pk PRIMARY KEY(vkey),
-            CONSTRAINT uer_uk UNIQUE(reg)
+            CONSTRAINT uer_uk1 UNIQUE(reg)
             );
         </sql>
     </changeSet>

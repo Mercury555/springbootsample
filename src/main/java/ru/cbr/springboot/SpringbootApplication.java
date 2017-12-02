@@ -150,11 +150,11 @@ public class SpringbootApplication {
 					}
 				}
 				System.out.println(record.getPzn());
-				record.setPzn(null);
-				record.setReal(null); // чтобы обойти ограничение внешнего ключа
-				record.setRgn(null);
-				record.setTnp(null);
-				record.setUer(null);
+//				record.setPzn(null);
+//				record.setReal(null); // чтобы обойти ограничение внешнего ключа
+//				record.setRgn(null);
+//				record.setTnp(null);
+//				record.setUer(null);
 				repository.save(record);
 				return;
 				// records.add(record);

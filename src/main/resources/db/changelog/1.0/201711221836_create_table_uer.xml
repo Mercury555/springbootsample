@@ -16,7 +16,7 @@
             UER varchar(1),
             UERNAME varchar(100),
             CONSTRAINT uer_vkey_pk PRIMARY KEY(vkey),
-            CONSTRAINT uer_uk UNIQUE(uer)
+            CONSTRAINT uer_uk2 UNIQUE(uer)
             );
         </sql>
     </changeSet>
