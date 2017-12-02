@@ -34,6 +34,8 @@
             INSERT INTO public.tnp  VALUES('05',	'5',	'СТАНИЦА',	'СТ-ЦА');
             INSERT INTO public.tnp  VALUES('06',	'6',	'АУЛ',	'АУЛ');
             INSERT INTO public.tnp  VALUES('07',	'7',	'РАБОЧИЙ ПОСЕЛОК',	'РП');
+            INSERT INTO public.tnp  VALUES('08',	'0',    'Тест00',	    'Тест00');
+            INSERT INTO public.tnp  VALUES('09',	'',    'Тест',	    'Тест');
         </sql>
     </changeSet>
 

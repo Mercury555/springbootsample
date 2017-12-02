@@ -294,7 +294,7 @@ public class Record {
     /*@Override
     public String toString() {
         return
-                "REAL='" + REAL1 + '\'' +
+                "REAL='" + REAL + '\'' +
                         ", PZN='" + PZN + '\'' +
                         ", UER='" + UER + '\'' +
                         ", RGN='" + RGN + '\'' +

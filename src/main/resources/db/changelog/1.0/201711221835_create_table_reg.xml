@@ -11,14 +11,14 @@
             </not>
         </preConditions>
         <sql>
-            CREATE TABLE public.rgn (
+            CREATE TABLE public.reg (
             VKEY varchar(2),
-            REG	varchar(2),
+            RGN	varchar(2),
             NAME varchar(50),
             CENTER varchar(50),
             NAMET varchar(50),
             CONSTRAINT reg_vkey_pk PRIMARY KEY(vkey),
-            CONSTRAINT uer_uk1 UNIQUE(reg)
+            CONSTRAINT uer_uk1 UNIQUE(rgn)
             );
         </sql>
     </changeSet>
@@ -28,6 +28,54 @@
             <tableExists tableName="reg" schemaName="public"/>
         </preConditions>
         <sql>
+
+           INSERT INTO public.reg  VALUES('01','00','ТЕРРИТОРИЯ НЕ ОПРЕДЕЛЕНА','','ТЕРРИТОРИЯ НЕ ОПРЕДЕЛЕНА');
+           INSERT INTO public.reg  VALUES('02','01','АЛТАЙСКИЙ КРАЙ','Г БАРНАУЛ','АЛТАЙСКОГО КРАЯ');
+           INSERT INTO public.reg  VALUES('03','03','КРАСНОДАРСКИЙ КРАЙ','Г КРАСНОДАР','КРАСНОДАРСКОГО КРАЯ');
+           INSERT INTO public.reg  VALUES('04','04','КРАСНОЯРСКИЙ КРАЙ','Г КРАСНОЯРСК','КРАСНОЯРСКОГО КРАЯ');
+           INSERT INTO public.reg  VALUES('05','05','ПРИМОРСКИЙ КРАЙ','Г ВЛАДИВОСТОК','ПРИМОРСКОГО КРАЯ');
+           INSERT INTO public.reg  VALUES('06','07','СТАВРОПОЛЬСКИЙ КРАЙ','Г СТАВРОПОЛЬ','СТАВРОПОЛЬСКОГО КРАЯ');
+           INSERT INTO public.reg  VALUES('07','08','ХАБАРОВСКИЙ КРАЙ','Г ХАБАРОВСК','ХАБАРОВСКОГО КРАЯ');
+           INSERT INTO public.reg  VALUES('08','10','АМУРСКАЯ ОБЛАСТЬ','Г БЛАГОВЕЩЕНСК','АМУРСКОЙ ОБЛАСТИ');
+           INSERT INTO public.reg  VALUES('09','11','АРХАНГЕЛЬСКАЯ ОБЛАСТЬ','Г АРХАНГЕЛЬСК','АРХАНГЕЛЬСКОЙ ОБЛАСТИ');
+           INSERT INTO public.reg  VALUES('10','12','АСТРАХАНСКАЯ ОБЛАСТЬ','Г АСТРАХАНЬ','АСТРАХАНСКОЙ ОБЛАСТИ');
+           INSERT INTO public.reg  VALUES('11','14','БЕЛГОРОДСКАЯ ОБЛАСТЬ','Г БЕЛГОРОД','БЕЛГОРОДСКОЙ ОБЛАСТИ');
+           INSERT INTO public.reg  VALUES('12','15','БРЯНСКАЯ ОБЛАСТЬ','Г БРЯНСК','БРЯНСКОЙ ОБЛАСТИ');
+           INSERT INTO public.reg  VALUES('13','17','ВЛАДИМИРСКАЯ ОБЛАСТЬ','Г ВЛАДИМИР','ВЛАДИМИРСКОЙ ОБЛАСТИ');
+           INSERT INTO public.reg  VALUES('14','18','ВОЛГОГРАДСКАЯ ОБЛАСТЬ','Г ВОЛГОГРАД','ВОЛГОГРАДСКОЙ ОБЛАСТИ');
+           INSERT INTO public.reg  VALUES('15','19','ВОЛОГОДСКАЯ ОБЛАСТЬ','Г ВОЛОГДА','ВОЛОГОДСКОЙ ОБЛАСТИ');
+           INSERT INTO public.reg  VALUES('16','20','ВОРОНЕЖСКАЯ ОБЛАСТЬ','Г ВОРОНЕЖ','ВОРОНЕЖСКОЙ ОБЛАСТИ');
+           INSERT INTO public.reg  VALUES('17','22','НИЖЕГОРОДСКАЯ ОБЛАСТЬ','Г НИЖНИЙ НОВГОРОД','НИЖЕГОРОДСКОЙ ОБЛАСТИ');
+           INSERT INTO public.reg  VALUES('18','24','ИВАНОВСКАЯ ОБЛАСТЬ','Г ИВАНОВО','ИВАНОВСКОЙ ОБЛАСТИ');
+           INSERT INTO public.reg  VALUES('19','25','ИРКУТСКАЯ ОБЛАСТЬ','Г ИРКУТСК','ИРКУТСКОЙ ОБЛАСТИ');
+           INSERT INTO public.reg  VALUES('20','26','РЕСПУБЛИКА ИНГУШЕТИЯ','Г МАГАС','РЕСПУБЛИКИ ИНГУШЕТИЯ');
+           INSERT INTO public.reg  VALUES('21','27','КАЛИНИНГРАДСКАЯ ОБЛАСТЬ','Г КАЛИНИНГРАД','КАЛИНИНГРАДСКОЙ ОБЛАСТИ');
+           INSERT INTO public.reg  VALUES('22','28','ТВЕРСКАЯ ОБЛАСТЬ','Г ТВЕРЬ','ТВЕРСКОЙ ОБЛАСТИ');
+           INSERT INTO public.reg  VALUES('23','29','КАЛУЖСКАЯ ОБЛАСТЬ','Г КАЛУГА','КАЛУЖСКОЙ ОБЛАСТИ');
+           INSERT INTO public.reg  VALUES('24','30','КАМЧАТСКИЙ КРАЙ','Г ПЕТРОПАВЛОВСК-КАМЧАТСКИЙ','КАМЧАТСКОГО КРАЯ');
+           INSERT INTO public.reg  VALUES('25','32','КЕМЕРОВСКАЯ ОБЛАСТЬ','Г КЕМЕРОВО','КЕМЕРОВСКОЙ ОБЛАСТИ');
+           INSERT INTO public.reg  VALUES('26','33','КИРОВСКАЯ ОБЛАСТЬ','Г КИРОВ','КИРОВСКОЙ ОБЛАСТИ');
+           INSERT INTO public.reg  VALUES('27','34','КОСТРОМСКАЯ ОБЛАСТЬ','Г КОСТРОМА','КОСТРОМСКОЙ ОБЛАСТИ');
+           INSERT INTO public.reg  VALUES('28','36','САМАРСКАЯ ОБЛАСТЬ','Г САМАРА','САМАРСКОЙ ОБЛАСТИ');
+           INSERT INTO public.reg  VALUES('29','37','КУРГАНСКАЯ ОБЛАСТЬ','Г КУРГАН','КУРГАНСКОЙ ОБЛАСТИ');
+           INSERT INTO public.reg  VALUES('30','38','КУРСКАЯ ОБЛАСТЬ','Г КУРСК','КУРСКОЙ ОБЛАСТИ');
+           INSERT INTO public.reg  VALUES('31','40','Г САНКТ-ПЕТЕРБУРГ','Г САНКТ-ПЕТЕРБУРГ','Г САНКТ-ПЕТЕРБУРГ');
+           INSERT INTO public.reg  VALUES('32','41','ЛЕНИНГРАДСКАЯ ОБЛАСТЬ','Г САНКТ-ПЕТЕРБУРГ','ЛЕНИНГРАДСКОЙ ОБЛАСТИ');
+           INSERT INTO public.reg  VALUES('33','42','ЛИПЕЦКАЯ ОБЛАСТЬ','Г ЛИПЕЦК','ЛИПЕЦКОЙ ОБЛАСТИ');
+           INSERT INTO public.reg  VALUES('34','44','МАГАДАНСКАЯ ОБЛАСТЬ','Г МАГАДАН','МАГАДАНСКОЙ ОБЛАСТИ');
+           INSERT INTO public.reg  VALUES('35','45','Г МОСКВА','Г МОСКВА','Г МОСКВА');
+           INSERT INTO public.reg  VALUES('36','46','МОСКОВСКАЯ ОБЛАСТЬ','Г МОСКВА','МОСКОВСКОЙ ОБЛАСТИ');
+           INSERT INTO public.reg  VALUES('37','47','МУРМАНСКАЯ ОБЛАСТЬ','Г МУРМАНСК','МУРМАНСКОЙ ОБЛАСТИ');
+           INSERT INTO public.reg  VALUES('38','49','НОВГОРОДСКАЯ ОБЛАСТЬ','Г ВЕЛИКИЙ НОВГОРОД','НОВГОРОДСКОЙ ОБЛАСТИ');
+           INSERT INTO public.reg  VALUES('39','50','НОВОСИБИРСКАЯ ОБЛАСТЬ','Г НОВОСИБИРСК','НОВОСИБИРСКОЙ ОБЛАСТИ');
+           INSERT INTO public.reg  VALUES('40','52','ОМСКАЯ ОБЛАСТЬ','Г ОМСК','ОМСКОЙ ОБЛАСТИ');
+           INSERT INTO public.reg  VALUES('41','53','ОРЕНБУРГСКАЯ ОБЛАСТЬ','Г ОРЕНБУРГ','ОРЕНБУРГСКОЙ ОБЛАСТИ');
+           INSERT INTO public.reg  VALUES('42','54','ОРЛОВСКАЯ ОБЛАСТЬ','Г ОРЕЛ','ОРЛОВСКОЙ ОБЛАСТИ');
+           INSERT INTO public.reg  VALUES('43','56','ПЕНЗЕНСКАЯ ОБЛАСТЬ','Г ПЕНЗА','ПЕНЗЕНСКОЙ ОБЛАСТИ');
+           INSERT INTO public.reg  VALUES('44','57','ПЕРМСКИЙ КРАЙ','Г ПЕРМЬ','ПЕРМСКОГО КРАЯ');
+           INSERT INTO public.reg  VALUES('45','58','ПСКОВСКАЯ ОБЛАСТЬ','Г ПСКОВ','ПСКОВСКОЙ ОБЛАСТИ');
+           INSERT INTO public.reg  VALUES('46','60','РОСТОВСКАЯ ОБЛАСТЬ','Г РОСТОВ-НА-ДОНУ','РОСТОВСКОЙ ОБЛАСТИ');
+           INSERT INTO public.reg  VALUES('47','61','РЯЗАНСКАЯ ОБЛАСТЬ','Г РЯЗАНЬ','РЯЗАНСКОЙ ОБЛАСТИ');
             INSERT INTO public.reg  VALUES('48','63','САРАТОВСКАЯ ОБЛАСТЬ','Г САРАТОВ','САРАТОВСКОЙ ОБЛАСТИ');
             INSERT INTO public.reg  VALUES('49','64','САХАЛИНСКАЯ ОБЛАСТЬ','Г ЮЖНО-САХАЛИНСК','САХАЛИНСКОЙ ОБЛАСТИ');
             INSERT INTO public.reg  VALUES('50','65','СВЕРДЛОВСКАЯ ОБЛАСТЬ','Г ЕКАТЕРИНБУРГ','СВЕРДЛОВСКОЙ ОБЛАСТИ');
@@ -64,6 +112,7 @@
             INSERT INTO public.reg  VALUES('81','99','ЕВРЕЙСКАЯ АО','Г БИРОБИДЖАН','ЕВРЕЙСКОЙ АО');
             INSERT INTO public.reg  VALUES('82','35','РЕСПУБЛИКА КРЫМ','Г СИМФЕРОПОЛЬ','РЕСПУБЛИКИ КРЫМ');
             INSERT INTO public.reg  VALUES('83','67','Г СЕВАСТОПОЛЬ','Г СЕВАСТОПОЛЬ','Г СЕВАСТОПОЛЬ');
+
         </sql>
     </changeSet>
 

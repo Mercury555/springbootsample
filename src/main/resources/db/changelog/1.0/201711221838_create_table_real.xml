@@ -26,7 +26,7 @@
             <tableExists tableName="real" schemaName="public"/>
         </preConditions>
         <sql>
-            INSERT INTO public.real  VALUES('0001',	NULL	,'УЧАСТВУЕТ В РАСЧЕТАХ');
+            INSERT INTO public.real  VALUES('0001',	''	,'УЧАСТВУЕТ В РАСЧЕТАХ');
             INSERT INTO public.real  VALUES('0002',	'БЛОК',	'РАСЧЕТЫ БЛОКИРОВАНЫ');
             INSERT INTO public.real  VALUES('0003',	'ВАДМ',	'ВРЕМЕННАЯ АДМИНИСТРАЦИЯ');
             INSERT INTO public.real  VALUES('0004',	'ИЗМР',	'ИЗМЕНЕНЫ РЕКВИЗИТЫ');

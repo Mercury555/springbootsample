@@ -16,7 +16,7 @@
             real varchar(4),
             pzn varchar(2),
             uer varchar(1) NOT NULL,
-            rgn varchar(1) NOT NULL,
+            rgn varchar(2) NOT NULL,
             ind varchar(6),
             tnp varchar(1),
             nnp	varchar(25),
@@ -44,9 +44,9 @@
             CONSTRAINT "bnkseek_real_fk" FOREIGN KEY ("real") REFERENCES "public"."real" ("real") ON DELETE RESTRICT ON UPDATE RESTRICT,
             CONSTRAINT "bnkseek_pzn_fk" FOREIGN KEY ("pzn") REFERENCES "public"."pzn" ("pzn") ON DELETE RESTRICT ON UPDATE RESTRICT,
             CONSTRAINT "bnkseek_uer_fk" FOREIGN KEY ("uer") REFERENCES "public"."uer" ("uer") ON DELETE RESTRICT ON UPDATE RESTRICT,
-            CONSTRAINT "bnkseek_rgn_fk" FOREIGN KEY ("rgn") REFERENCES "public"."rgn" ("reg") ON DELETE RESTRICT ON UPDATE RESTRICT,
+            CONSTRAINT "bnkseek_rgn_fk" FOREIGN KEY ("rgn") REFERENCES "public"."reg" ("rgn") ON DELETE RESTRICT ON UPDATE RESTRICT,
             CONSTRAINT "bnkseek_tnp_fk" FOREIGN KEY ("tnp") REFERENCES "public"."tnp" ("tnp") ON DELETE RESTRICT ON UPDATE RESTRICT,
-            CONSTRAINT "bnkseek_bnkseek_fk" FOREIGN KEY ("vkeydel") REFERENCES "public"."bnkseek" ("vkey") ON DELETE RESTRICT ON UPDATE RESTRICT,
+
             CONSTRAINT bnkseek_uk UNIQUE(newnum)
             );
         </sql>
