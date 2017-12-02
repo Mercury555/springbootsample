@@ -6,13 +6,11 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
+@Table(name = "bnkseek")
 public class Record {
-
     @Id
-    @GeneratedValue
-    private Long id;
     private String vkey;
-    private String real1;
+    private String real;
     private String pzn;
     private String uer;
     private String rgn;
@@ -54,10 +52,6 @@ public class Record {
         this.rkc = rkc;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getVkey() {
         return vkey;
     }
@@ -66,12 +60,12 @@ public class Record {
         this.vkey = vkey;
     }
 
-    public String getReal1() {
-        return real1;
+    public String getReal() {
+        return real;
     }
 
-    public void setReal1(String real1) {
-        this.real1 = real1;
+    public void setReal(String real1) {
+        this.real = real1;
     }
 
     public void setPzn(String pzn) {
@@ -296,9 +290,6 @@ public class Record {
         return rgn;
     }
 
-    public Long getId() {
-        return id;
-    }
 
     /*@Override
     public String toString() {

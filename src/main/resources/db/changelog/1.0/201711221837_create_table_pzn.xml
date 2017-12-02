@@ -12,17 +12,18 @@
         </preConditions>
         <sql>
             CREATE TABLE public.pzn (
-            VKEY varchar(2),
+            vkey varchar(2),
             PZN	varchar(2),
-            IMY	NAME varchar(100),
+            IMY varchar(4),
+            NAME varchar(100),
             CB_DATE	date,
             CE_DATE date,
-            CONSTRAINT vkey_pk PRIMARY KEY(vkey)
+            CONSTRAINT pzn_vkey_pk PRIMARY KEY(vkey)
             );
         </sql>
     </changeSet>
 
-    <changeSet id="public.insert.real" author="yditarova" dbms="postgresql">
+    <changeSet id="public.insert.pzn" author="yditarova" dbms="postgresql">
         <preConditions onFail="MARK_RAN">
             <tableExists tableName="pzn" schemaName="public"/>
         </preConditions>

@@ -1,6 +1,9 @@
 package ru.cbr.springboot;
 
+import org.hibernate.JDBCException;
 import org.jamel.dbf.DbfReader;
+import org.jamel.dbf.structure.DbfDataType;
+import org.jamel.dbf.structure.DbfField;
 import org.jamel.dbf.structure.DbfHeader;
 import org.jamel.dbf.structure.DbfRow;
 import org.springframework.boot.SpringApplication;
@@ -12,6 +15,7 @@ import ru.cbr.springboot.repository.RecordRepository;
 import java.nio.charset.Charset;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Date;
 import java.util.List;
 
 import static ru.cbr.springboot.entity.Record.getNamesOfRow;
@@ -22,6 +26,8 @@ public class SpringbootApplication {
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(SpringbootApplication.class, args);
 		generateDummyData(context);
+		RecordRepository repository = context.getBean(RecordRepository.class);
+		System.out.println(repository.findAll().size());
 	}
 	private static void generateDummyData(ApplicationContext context) {
 		RecordRepository repository = context.getBean(RecordRepository.class);
@@ -47,7 +53,7 @@ public class SpringbootApplication {
 							record.setVkey(dbfRow.getString("VKEY"));
 							break;
 						case "REAL":
-							record.setReal1(dbfRow.getString("REAL"));
+							record.setReal(dbfRow.getString("REAL"));
 							break;
 						case "PZN":
 							record.setPzn(dbfRow.getString("PZN"));
@@ -118,20 +124,39 @@ public class SpringbootApplication {
 						case "DATE_IN":
 							record.setDate_in(dbfRow.getDate("DATE_IN"));
 							break;
-						case "DATE_CH":
-							record.setDate_ch(dbfRow.getDate("DATE_CH"));
+						case "DATE_CH": {
+							Date date = dbfRow.getDate("DATE_CH");
+							if (date.getYear() == 15893) {
+								record.setDate_ch(null);
+							} else {
+								record.setDate_ch(date);
+							}
 							break;
+						}
 						case "VKEYDEL":
 							record.setVkeydel(dbfRow.getString("VKEYDEL"));
 							break;
-						case "DT_IZMR":
-							record.setDt_izmr(dbfRow.getDate("DT_IZMR"));
+						case "DT_IZMR": {
+							Date date = dbfRow.getDate("DT_IZMR");
+							if (date.getYear() == 15893) {
+								record.setDt_izmr(null);
+							} else {
+								record.setDt_izmr(date);
+							}
 							break;
+						}
 						default:
 							break;
 					}
 				}
+				System.out.println(record.getPzn());
+				record.setPzn(null);
+				record.setReal(null); // чтобы обойти ограничение внешнего ключа
+				record.setRgn(null);
+				record.setTnp(null);
+				record.setUer(null);
 				repository.save(record);
+				return;
 				// records.add(record);
 			}
 		}

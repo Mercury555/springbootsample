@@ -13,7 +13,7 @@
         <sql>
             CREATE TABLE public.bnkseek (
             vkey varchar(8) NOT NULL,
-            reral varchar(4),
+            real varchar(4),
             pzn varchar(2),
             uer varchar(1) NOT NULL,
             rgn varchar(1) NOT NULL,
@@ -34,18 +34,18 @@
             regn varchar(9),
             okpo varchar(8),
             dt_izm date NOT NULL,
-            cks	ksnp varchar(6),
-            ksnp varchar(20)
+            cks	varchar(6),
+            ksnp varchar(20),
             date_in date NOT NULL,
             date_ch date,
             vkeydel varchar(8),
             dt_izmr date,
             CONSTRAINT vkey_pk PRIMARY KEY(vkey),
-            CONSTRAINT "bnkseek_real_fk" FOREIGN KEY ("real") REFERENCES "public"."real" ("real") ON DELETE RESTRICT ON UPDATE RESTRICT,
-            CONSTRAINT "bnkseek_pzn_fk" FOREIGN KEY ("pzn") REFERENCES "public"."pzn" ("pzn") ON DELETE RESTRICT ON UPDATE RESTRICT,
-            CONSTRAINT "bnkseek_uer_fk" FOREIGN KEY ("uer") REFERENCES "public"."uer" ("uer") ON DELETE RESTRICT ON UPDATE RESTRICT,
-            CONSTRAINT "bnkseek_rgn_fk" FOREIGN KEY ("rgn") REFERENCES "public"."reg" ("rgn") ON DELETE RESTRICT ON UPDATE RESTRICT,
-            CONSTRAINT "bnkseek_rgn_fk" FOREIGN KEY ("tnp") REFERENCES "public"."tnp" ("tnp") ON DELETE RESTRICT ON UPDATE RESTRICT,
+            CONSTRAINT "bnkseek_real_fk" FOREIGN KEY ("real") REFERENCES "public"."real" ("vkey") ON DELETE RESTRICT ON UPDATE RESTRICT,
+            CONSTRAINT "bnkseek_pzn_fk" FOREIGN KEY ("pzn") REFERENCES "public"."pzn" ("vkey") ON DELETE RESTRICT ON UPDATE RESTRICT,
+            CONSTRAINT "bnkseek_uer_fk" FOREIGN KEY ("uer") REFERENCES "public"."uer" ("vkey") ON DELETE RESTRICT ON UPDATE RESTRICT,
+            CONSTRAINT "bnkseek_rgn_fk" FOREIGN KEY ("rgn") REFERENCES "public"."reg" ("vkey") ON DELETE RESTRICT ON UPDATE RESTRICT,
+            CONSTRAINT "bnkseek_tnp_fk" FOREIGN KEY ("tnp") REFERENCES "public"."tnp" ("vkey") ON DELETE RESTRICT ON UPDATE RESTRICT,
             CONSTRAINT "bnkseek_bnkseek_fk" FOREIGN KEY ("vkeydel") REFERENCES "public"."bnkseek" ("vkey") ON DELETE RESTRICT ON UPDATE RESTRICT,
             CONSTRAINT bnkseek_uk UNIQUE(newnum)
             );

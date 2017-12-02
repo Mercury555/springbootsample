@@ -17,12 +17,12 @@
             NAME varchar(50),
             CENTER varchar(50),
             NAMET varchar(50),
-            CONSTRAINT vkey_pk PRIMARY KEY(vkey)
+            CONSTRAINT reg_vkey_pk PRIMARY KEY(vkey)
             );
         </sql>
     </changeSet>
 
-    <changeSet id="public.insert.real" author="yditarova" dbms="postgresql">
+    <changeSet id="public.insert.reg" author="yditarova" dbms="postgresql">
         <preConditions onFail="MARK_RAN">
             <tableExists tableName="reg" schemaName="public"/>
         </preConditions>

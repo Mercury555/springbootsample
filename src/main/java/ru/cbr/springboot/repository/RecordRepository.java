@@ -8,7 +8,7 @@ import ru.cbr.springboot.entity.Record;
 import java.util.List;
 
 @Repository
-public interface RecordRepository extends JpaRepository<Record, Long> {
+public interface RecordRepository extends JpaRepository<Record, String> {
     List<Record> findAllByRgn(String rgn);
     List<Record> findAllByPzn(String pzn);
     List<Record> findAllByRkc(String rkc);

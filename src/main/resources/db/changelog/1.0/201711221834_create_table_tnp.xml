@@ -11,28 +11,28 @@
             </not>
         </preConditions>
         <sql>
-            CREATE TABLE public.real (
+            CREATE TABLE public.tnp (
             VKEY varchar(2),
             TNP	varchar(1),
             FULLNAME varchar(50),
             SHORTNAME varchar(6),
-            CONSTRAINT vkey_pk PRIMARY KEY(vkey)
+            CONSTRAINT tnp_vkey_pk PRIMARY KEY(vkey)
             );
         </sql>
     </changeSet>
 
-    <changeSet id="public.insert.real" author="yditarova" dbms="postgresql">
+    <changeSet id="public.insert.tnp" author="yditarova" dbms="postgresql">
         <preConditions onFail="MARK_RAN">
             <tableExists tableName="tnp" schemaName="public"/>
         </preConditions>
         <sql>
-            INSERT INTO public.real  VALUES('01',	'1',	'ГОРОД',	'Г');
-            INSERT INTO public.real  VALUES('02',	'2',	'ПОСЕЛОК',	'П');
-            INSERT INTO public.real  VALUES('03',	'3',	'СЕЛО',	'С');
-            INSERT INTO public.real  VALUES('04',	'4',	'ПОСЕЛОК ГОРОДСКОГО ТИПА',	'ПГТ');
-            INSERT INTO public.real  VALUES('05',	'5',	'СТАНИЦА',	'СТ-ЦА');
-            INSERT INTO public.real  VALUES('06',	'6',	'АУЛ',	'АУЛ');
-            INSERT INTO public.real  VALUES('07',	'7',	'РАБОЧИЙ ПОСЕЛОК',	'РП');
+            INSERT INTO public.tnp  VALUES('01',	'1',	'ГОРОД',	'Г');
+            INSERT INTO public.tnp  VALUES('02',	'2',	'ПОСЕЛОК',	'П');
+            INSERT INTO public.tnp  VALUES('03',	'3',	'СЕЛО',	'С');
+            INSERT INTO public.tnp  VALUES('04',	'4',	'ПОСЕЛОК ГОРОДСКОГО ТИПА',	'ПГТ');
+            INSERT INTO public.tnp  VALUES('05',	'5',	'СТАНИЦА',	'СТ-ЦА');
+            INSERT INTO public.tnp  VALUES('06',	'6',	'АУЛ',	'АУЛ');
+            INSERT INTO public.tnp  VALUES('07',	'7',	'РАБОЧИЙ ПОСЕЛОК',	'РП');
         </sql>
     </changeSet>
 

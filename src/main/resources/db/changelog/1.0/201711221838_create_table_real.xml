@@ -15,7 +15,7 @@
             VKEY varchar(4),
             REAL varchar(4),
             NAME_OGR varchar(100),
-            CONSTRAINT vkey_pk PRIMARY KEY(vkey)
+            CONSTRAINT real_vkey_pk PRIMARY KEY(vkey)
             );
         </sql>
     </changeSet>
@@ -27,7 +27,7 @@
         <sql>
             INSERT INTO public.real  VALUES('0001',	NULL	,'УЧАСТВУЕТ В РАСЧЕТАХ');
             INSERT INTO public.real  VALUES('0002',	'БЛОК',	'РАСЧЕТЫ БЛОКИРОВАНЫ');
-            INSERT INTO public.real  VALUES('0003',	'ВАДМ',	ВРЕМЕННАЯ АДМИНИСТРАЦИЯ');
+            INSERT INTO public.real  VALUES('0003',	'ВАДМ',	'ВРЕМЕННАЯ АДМИНИСТРАЦИЯ');
             INSERT INTO public.real  VALUES('0004',	'ИЗМР',	'ИЗМЕНЕНЫ РЕКВИЗИТЫ');
             INSERT INTO public.real  VALUES('0006',	'ИСКЛ',	'НАЧАТ ПРОЦЕСС ЛИКВИДАЦИИ');
             INSERT INTO public.real  VALUES('0008',	'ЛИКВ',	'ЛИКВИДАЦИОННАЯ КОМИССИЯ (ЛИКВИДАТОР,КОНКУРСНЫЙ УПРАВЛЯЮЩИЙ)');

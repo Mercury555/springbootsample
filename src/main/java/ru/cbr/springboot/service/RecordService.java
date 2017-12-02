@@ -38,7 +38,7 @@ public class RecordService {
     }
 
     public void delete(long id) {
-        recordRepository.delete(id);
+        //recordRepository.delete(id);
     }
 
 //    public Record findOne(long id) {
