@@ -18,7 +18,8 @@
             NAME varchar(100),
             CB_DATE	date,
             CE_DATE date,
-            CONSTRAINT pzn_vkey_pk PRIMARY KEY(vkey)
+            CONSTRAINT pzn_vkey_pk PRIMARY KEY(vkey),
+            CONSTRAINT pzn_uk UNIQUE(pzn)
             );
         </sql>
     </changeSet>

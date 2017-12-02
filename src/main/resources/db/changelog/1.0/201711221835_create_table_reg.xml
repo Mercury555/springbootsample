@@ -17,7 +17,8 @@
             NAME varchar(50),
             CENTER varchar(50),
             NAMET varchar(50),
-            CONSTRAINT reg_vkey_pk PRIMARY KEY(vkey)
+            CONSTRAINT reg_vkey_pk PRIMARY KEY(vkey),
+            CONSTRAINT uer_uk UNIQUE(reg)
             );
         </sql>
     </changeSet>

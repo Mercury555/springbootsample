@@ -16,7 +16,8 @@
             TNP	varchar(1),
             FULLNAME varchar(50),
             SHORTNAME varchar(6),
-            CONSTRAINT tnp_vkey_pk PRIMARY KEY(vkey)
+            CONSTRAINT tnp_vkey_pk PRIMARY KEY(vkey),
+            CONSTRAINT uer_uk UNIQUE(tnp)
             );
         </sql>
     </changeSet>

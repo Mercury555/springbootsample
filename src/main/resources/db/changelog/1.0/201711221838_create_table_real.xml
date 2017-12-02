@@ -15,7 +15,8 @@
             VKEY varchar(4),
             REAL varchar(4),
             NAME_OGR varchar(100),
-            CONSTRAINT real_vkey_pk PRIMARY KEY(vkey)
+            CONSTRAINT real_vkey_pk PRIMARY KEY(vkey),
+            CONSTRAINT real_uk UNIQUE(real)
             );
         </sql>
     </changeSet>
